@@ -57,15 +57,65 @@
             padding: 20px 40px;
             border-radius: 10px;
         }
+        #betControls {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 100;
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #betControls button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        #balance, #currentBet {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .chip {
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            border: 2px solid gold;
+        }
+        #placeBet {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #clearBet {
+            background-color: #f44336;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div id="dealerScore"></div>
     <div id="score">Your Cards: 0</div>
     <div id="gameMessage"></div>
+    <div id="betControls">
+        <div id="balance">Balance: $1000</div>
+        <div id="currentBet">Current Bet: $0</div>
+        <button class="chip" data-value="5">$5</button>
+        <button class="chip" data-value="25">$25</button>
+        <button class="chip" data-value="100">$100</button>
+        <button id="clearBet">Clear Bet</button>
+        <button id="placeBet">Place Bet</button>
+    </div>
     <div id="buttons">
-        <button id="hitButton">Hit</button>
-        <button id="standButton">Stand</button>
+        <button id="hitButton" disabled>Hit</button>
+        <button id="standButton" disabled>Stand</button>
+        <button id="doubleButton" disabled>Double</button>
+        <button id="splitButton" disabled>Split</button>
         <button id="playAgain" style="display: none;">Play Again</button>
     </div>
     <script type="module" src="/game.js"></script>
